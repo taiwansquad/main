@@ -4,22 +4,24 @@
   <meta charset="utf-8">
   <title>Taiwan Squad</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     html, body {
       margin:0; padding:0; height:100%; overflow:hidden;
     }
     iframe {
-      width:100%; height:100%; border:none;
+      width:142.857%;
+      height:142.857%;
+      border:none;
+      transform: scale(0.7);
+      transform-origin: top left;
     }
   </style>
 </head>
 <body>
   <iframe id="appFrame"></iframe>
   <script>
-    // GAS Web App URL
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwtsmOyjqqxlZ30kFkmbnXF35rEdi-wQn2aK6OcdaxIiFTsl1QbRQLNPV16eqgm_1XE/exec";
-
-    // 把網址參數轉給 iframe（避免功能壞掉）
     const query = location.search;
     document.getElementById("appFrame").src = GAS_URL + query;
   </script>
