@@ -13,19 +13,22 @@
   <link rel="apple-touch-icon" href="/logo-t.png">
 
   <style>
-    html, body {
-      margin:0; padding:0; height:100%; overflow:hidden;
-
-      /* ✅ 阻止 iOS/Safari 對外層頁做文字自動放大，進而影響 iframe 呈現 */
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-    /* ✅ 也餵給 iframe 元素，避免某些瀏覽器在嵌入元素上另做處理 */
-    #appFrame {
-      width:100%; height:100%; border:none;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
+      html, body {
+        -webkit-text-size-adjust: none !important;
+        text-size-adjust: none !important;
+        height: 100dvh; /* 比 100% 穩，避免視口判斷錯誤 */
+      }
+      
+      #appFrame {
+        width: 100%;
+        height: 100dvh;
+        border: none;
+      
+        /* 一樣關掉，以防特定裝置對嵌入元素做自己的放大 */
+        -webkit-text-size-adjust: none !important;
+        text-size-adjust: none !important;
+      }
+      
   </style>
 </head>
 <body>
