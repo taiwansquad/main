@@ -3,50 +3,26 @@
 <head>
   <meta charset="utf-8">
   <title>Taiwan Squad</title>
-
-  <!-- ✅ 和內頁一致，避免縮放邏輯不一致 -->
-  <meta name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <!-- 網址列 icon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="icon" href="/logo-t.png" sizes="any">
   <link rel="apple-touch-icon" href="/logo-t.png">
-
   <style>
-      html, body {
-        -webkit-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-        height: 100dvh; /* 比 100% 穩，避免視口判斷錯誤 */
-        overflow: hidden; 
-      }
-      
-      #appFrame {
-        display: block; 
-        width: 100%;
-        height: 100dvh;
-        border: none;
-      
-        /* 一樣關掉，以防特定裝置對嵌入元素做自己的放大 */
-        -webkit-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-      }
-      
+    html, body { -webkit-text-size-adjust:none!important; text-size-adjust:none!important; height:100dvh; overflow:hidden; }
+    #appFrame { display:block; width:100%; height:100dvh; border:none; -webkit-text-size-adjust:none!important; text-size-adjust:none!important; }
   </style>
 </head>
 <body>
-  <!-- 關鍵：allow 開放剪貼簿權限 -->
-<iframe id="appFrame"
-        title="Taiwan Squad"
-        src="https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1"
-        allow="clipboard-read; clipboard-write"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads allow-modals allow-clipboard-read allow-clipboard-write"
-        style="display:block;width:100%;height:100dvh;border:0;">
-</iframe>
+  <iframe id="appFrame"
+          title="Taiwan Squad"
+          allow="clipboard-read; clipboard-write"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads allow-modals allow-clipboard-read allow-clipboard-write"
+          style="display:block;width:100%;height:100dvh;border:0;"></iframe>
 
   <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1";
-    const query = location.search || "";
-    document.getElementById("appFrame").src = GAS_URL + query;
+    const BASE = "https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec";
+    const query = (location.search || "");
+    // 只設定一次，避免二次載入打斷密碼對話框
+    document.getElementById("appFrame").src = BASE + "?admin=1" + query.replace(/^\?/, "&");
   </script>
 </body>
 </html>
