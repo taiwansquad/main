@@ -34,10 +34,14 @@
   </style>
 </head>
 <body>
-  <iframe id="appFrame"></iframe>
+  <!-- 關鍵：allow 開放剪貼簿權限 -->
+  <iframe id="appFrame"
+          title="Taiwan Squad"
+          allow="clipboard-write; clipboard-read"></iframe>
+
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1";
-    const query = location.search;
+    const query = location.search || "";
     document.getElementById("appFrame").src = GAS_URL + query;
   </script>
 </body>
