@@ -34,7 +34,7 @@
   </style>
 </head>
 <body>
-  <iframe id="appFrame"></iframe>
+  <iframe id="appFrame" allow="clipboard-read; clipboard-write"></iframe>
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1";
     const query = location.search;
@@ -42,7 +42,10 @@
   </script>
   <script>
   // 只接受來自 Apps Script 的訊息（你也可以放寬成 startsWith）
-  const ALLOW_ORIGIN = 'https://script.google.com';
+    const ALLOW_ORIGINS = [
+    'https://script.google.com',
+    'https://script.googleusercontent.com'
+  ];
   window.addEventListener('message', async (e) => {
     if (!e.origin || !e.origin.startsWith(ALLOW_ORIGIN)) return;
     const data = e.data || {};
