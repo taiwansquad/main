@@ -1,44 +1,7 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <title>Taiwan Squad</title>
-
-  <!-- ✅ 和內頁一致，避免縮放邏輯不一致 -->
-  <meta name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-  <!-- 網址列 icon -->
-  <link rel="icon" href="/logo-t.png" sizes="any">
-  <link rel="apple-touch-icon" href="/logo-t.png">
-
-  <style>
-      html, body {
-        -webkit-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-        height: 100dvh; /* 比 100% 穩，避免視口判斷錯誤 */
-        overflow: hidden; 
-      }
-      
-      #appFrame {
-        display: block; 
-        width: 100%;
-        height: 100dvh;
-        border: none;
-      
-        /* 一樣關掉，以防特定裝置對嵌入元素做自己的放大 */
-        -webkit-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-      }
-      
-  </style>
-</head>
-<body>
-  <iframe id="appFrame"></iframe>
-  <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1";
-    const query = location.search;
-    document.getElementById("appFrame").src = GAS_URL + query;
-  </script>
-</body>
-</html>
+<!doctype html>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<script>
+  location.replace("https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1");
+</script>
+<p>Redirecting…</p>
