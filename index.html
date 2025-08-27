@@ -2,71 +2,98 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
   <title>Taiwan Squad — Coming Soon</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/taiwansquad/main/main/logo-t.png" />
   <style>
-    :root { --bg:#ffffff; --text:#111827; --muted:#6b7280; }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-    body{
-      display: grid; place-items: center;
-      background: var(--bg); color: var(--text);
-      padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right))
-               max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-                   "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    html, body {
+      margin: 0;
+      background: #ffffff;         /* 整頁白色 */
+      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-    .wrap{ text-align:center; }
-    img{
-      width: min(92vw, 960px);
+    .wrap {
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      place-items: center;
+      background: #ffffff;         /* 保險再白一次 */
+    }
+    .hero {
+      text-align: center;
+      padding: 48px 16px 8px;
+    }
+    .hero img {
+      width: min(92vw, 1100px);
       height: auto;
       display: block;
-      margin: 0 auto 20px;
-      border-radius: 12px;
-      box-shadow: 0 12px 36px rgba(0,0,0,.12);
+      margin: 0 auto;
+      background: #ffffff;         /* 圖片背景也白 */
+      box-shadow: none !important; /* 關陰影 */
+      filter: none !important;     /* 關任何濾鏡/drop-shadow */
+      border: 0;                   /* 不要邊框 */
+      border-radius: 0;            /* 不要圓角避免視覺色差 */
     }
-    .sub{
-      margin: 0 0 16px;
-      font-size: clamp(18px, 3.2vw, 28px);
-      letter-spacing: .06em;
-      color: var(--muted);
-      text-transform: lowercase;
+    .hero h1 {
+      margin: 18px 0 32px;
+      font-size: clamp(20px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: #6b7280;              /* 次要灰，若想更淡可改 #9ca3af */
+    }
+    .footer {
+      padding: 20px 0 40px;
+      background: #ffffff;         /* 底部也是純白 */
+    }
+    /* 圖示列 */
+    .social {
+      margin-bottom: 12px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social img {
+      width: 60px; height: 60px;
+      display: block;
+      box-shadow: none !important;
+      background: transparent;
+      border-radius: 0;
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <img
-      src="https://raw.githubusercontent.com/taiwansquad/main/main/logo-t.png"
-      alt="Taiwan Squad"
-      loading="lazy"
-      decoding="async"
-    />
-    <p class="sub">coming soon</p>
+  <div class="wrap">
+    <main class="hero">
+      <img
+        src="https://raw.githubusercontent.com/taiwansquad/main/refs/heads/main/logo-t.png"
+        alt="Taiwan Squad Logo" />
+      <h1>coming soon</h1>
+    </main>
 
-    <div style="margin-bottom:12px; text-align:center; display:flex; justify-content:center; gap:20px;">
-      <!-- Instagram -->
-      <div>
-        <a href="https://www.instagram.com/taiwansquad_tokyo?igsh=OG1jemRzM2QybjVm" 
-          target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-              alt="Instagram" 
-              style="width:60px; height:60px;" />
-        </a>
+    <footer class="footer">
+      <div class="social">
+        <!-- Instagram -->
+        <div>
+          <a href="https://www.instagram.com/taiwansquad_tokyo?igsh=OG1jemRzM2QybjVm"
+             target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+              alt="Instagram" />
+          </a>
+        </div>
+        <!-- X (Twitter) -->
+        <div>
+          <a href="https://x.com/taiwansquad"
+             target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg"
+              alt="X" />
+          </a>
+        </div>
       </div>
-
-      <!-- X (Twitter) -->
-      <div>
-        <a href="https://x.com/taiwansquad" 
-          target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg" 
-              alt="X" 
-              style="width:60px; height:60px;" />
-        </a>
-      </div>
-    </div>
-  </main>
+    </footer>
+  </div>
 </body>
 </html>
