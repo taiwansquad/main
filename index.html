@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Taiwan Squad — Coming Soon</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/taiwansquad/main/main/logo-t.png" />
+  <style>
+    :root { --bg: #0b0d12; --text:#e5e7eb; --muted:#9ca3af; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: grid; place-items: center;
+      background: var(--bg); color: var(--text);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right))
+               max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+                   "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+    }
+    .wrap { text-align: center; }
+    img {
+      width: min(92vw, 960px);
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .sub {
+      margin: 0;
+      font-size: clamp(18px, 3.2vw, 28px);
+      letter-spacing: .06em;
+      color: var(--muted);
+      text-transform: lowercase; /* 需要小寫就保留 */
+    }
+  </style>
+</head>
 <body>
-  <iframe id="appFrame"></iframe>
-  <script>
-    const GAS_URL = "https://www.instagram.com/taiwansquad_tokyo/?igsh=OG1jemRzM2QybjVm#";
-    const query = location.search;
-    document.getElementById("appFrame").src = GAS_URL + query;
-  </script>
+  <main class="wrap">
+    <img
+      src="https://raw.githubusercontent.com/taiwansquad/main/main/logo-t.png"
+      alt="Taiwan Squad"
+      loading="lazy"
+      decoding="async"
+    />
+    <p class="sub">coming soon</p>
+  </main>
 </body>
 </html>
