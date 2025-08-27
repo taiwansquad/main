@@ -37,7 +37,10 @@
   <!-- 關鍵：allow 開放剪貼簿權限 -->
   <iframe id="appFrame"
           title="Taiwan Squad"
-          allow="clipboard-write; clipboard-read"></iframe>
+          allow="clipboard-write; clipboard-read"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
+          style="display:block;width:100%;height:100dvh;border:0;"></iframe>
+
 
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbyucRXvSirdkVT5p80cUCqFjEWT9PDvLzcMxvkqx95h2MSuOhk7nvE9zicgvqVNgjSB/exec?admin=1";
