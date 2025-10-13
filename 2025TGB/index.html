@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TGB Badminton Tournament</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --primary-pressed: #1d4ed8;
+      --border: #e2e8f0;
+      --card: #f8fafc;
+      --radius: 16px;
+      --shadow: 0 6px 20px rgba(2,6,23,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --fg: #e5e7eb;
+        --muted: #a1a1aa;
+        --primary: #60a5fa;
+        --primary-pressed: #93c5fd;
+        --border: #1f2937;
+        --card: #0f172a;
+        --shadow: 0 8px 30px rgba(0,0,0,0.35);
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px clamp(16px, 4vw, 28px);
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+    }
+    .langbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      backdrop-filter: saturate(150%) blur(6px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px clamp(12px, 4vw, 20px);
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .langbar button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--fg);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      min-width: 64px;
+      box-shadow: var(--shadow);
+    }
+    .langbar button[aria-pressed="true"] {
+      background: var(--primary);
+      color: white;
+      border-color: transparent;
+    }
+    h1 {
+      font-size: clamp(22px, 6vw, 32px);
+      line-height: 1.2;
+      margin: 8px 0 4px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 22px;
+    }
+    @media (min-width: 560px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      transition: transform .08s ease, box-shadow .08s ease;
+      min-height: 92px;
+    }
+    a.card:active { transform: scale(0.98); }
+    .card .label {
+      font-size: clamp(16px, 4.5vw, 18px);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .social-icons {
+      margin-bottom: 12px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-icons img {
+      width: 60px;
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Language Bar -->
+  <div class="langbar" role="tablist" aria-label="Language selector">
+    <button id="btn-cn" role="tab" aria-selected="true" aria-pressed="true">CN</button>
+    <button id="btn-jp" role="tab" aria-selected="false" aria-pressed="false">JP</button>
+    <button id="btn-kr" role="tab" aria-selected="false" aria-pressed="false">KR</button>
+  </div>
+
+  <main class="wrap">
+    <header>
+      <img class="logo" src="https://github.com/taiwansquad/main/raw/main/logo-t.png" alt="TGB logo" />
+      <h1 id="title">TGB Badminton Tournament</h1>
+    </header>
+
+    <section class="grid" aria-labelledby="title">
+      <a class="card" id="link-info" href="info.html">
+        <div class="label"><span aria-hidden="true">📣</span><span data-i18n="links.info">大會資訊</span></div>
+      </a>
+      <a class="card" id="link-schedule" href="game.html">
+        <div class="label"><span aria-hidden="true">📅</span><span data-i18n="links.schedule">分組賽程</span></div>
+      </a>
+      <a class="card" id="link-dinner" href="dinner.html">
+        <div class="label"><span aria-hidden="true">🍽️</span><span data-i18n="links.dinner">晚宴</span></div>
+      </a>
+    </section>
+
+    <footer>
+      <div class="social-icons">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/taiwansquad_tokyo?igsh=OG1jemRzM2QybjVm" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <!-- X -->
+        <a href="https://x.com/taiwansquad" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg" alt="X" />
+        </a>
+      </div>
+      <div style="font-size:12px; color:#999;">
+        Copyright © 2025. Taiwan Squad Kent H. All rights reserved
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const I18N = {
+      cn: {
+        links: { info: "大會資訊", schedule: "分組賽程", dinner: "晚宴" },
+      },
+      jp: {
+        links: { info: "大会情報", schedule: "グループ日程", dinner: "懇親会" },
+      },
+      kr: {
+        links: { info: "대회 정보", schedule: "조별 일정", dinner: "만찬" },
+      },
+    };
+
+    function setLang(lang) {
+      const dict = I18N[lang] || I18N.cn;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const parts = key.split('.');
+        let cur = dict;
+        for (const p of parts) cur = cur?.[p];
+        if (typeof cur === 'string') el.textContent = cur;
+      });
+      ['cn','jp','kr'].forEach(code => {
+        const selected = (code === lang);
+        const btn = document.getElementById(`btn-${code}`);
+        btn.setAttribute('aria-selected', selected);
+        btn.setAttribute('aria-pressed', selected);
+      });
+      try { localStorage.setItem('tgb_lang', lang); } catch(_){}
+      document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'kr' ? 'ko' : 'zh-Hans');
+    }
+
+    document.getElementById('btn-cn').addEventListener('click', () => setLang('cn'));
+    document.getElementById('btn-jp').addEventListener('click', () => setLang('jp'));
+    document.getElementById('btn-kr').addEventListener('click', () => setLang('kr'));
+
+    const saved = (()=>{ try { return localStorage.getItem('tgb_lang'); } catch(_) { return null; } })();
+    setLang(saved || 'cn');
+  </script>
+</body>
+</html>
