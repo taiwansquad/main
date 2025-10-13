@@ -27,6 +27,9 @@
     .note{color:var(--muted);font-size:13px}
     .grid-2{display:grid;grid-template-columns:1fr;gap:10px}
     @media(min-width:540px){.grid-2{grid-template-columns:1fr 1fr}}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{appearance:none;border:1px solid var(--border);background:var(--card);padding:12px 14px;border-radius:12px;text-decoration:none;color:var(--fg);font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
     footer{margin:24px 0 10px;text-align:center;color:var(--muted);font-size:12px}
   </style>
 </head>
@@ -54,6 +57,9 @@
         <strong data-i18n="labels.venue">地點</strong>：<span data-i18n="content.venue">台北市大安運動中心</span><br>
         <span data-i18n="labels.address">地址</span>：<span data-i18n="content.address">106 台灣台北市大安區辛亥路三段 55 號</span><br>
         <span data-i18n="labels.access">交通</span>：<span data-i18n="content.access">捷運文湖線「科技大樓站」步行約 10 分鐘</span>
+        <div class="btns">
+          <a class="btn" id="btn-map" href="https://maps.google.com/?q=106+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E8%BE%9B%E4%BA%A5%E8%B7%AF%E4%B8%89%E6%AE%B5+55%E8%99%9F" target="_blank" rel="noopener" data-i18n="buttons.map">會場地圖（Google 地圖）</a>
+        </div>
       </div></div>
     </section>
 
@@ -93,6 +99,7 @@
   </main>
 
   <script>
+    // ===== i18n dictionaries (restored CN/JP/KR) =====
     const I18N = {
       cn: {
         subtitle: "歡迎！以下為本次賽事的大會資訊。",
@@ -119,7 +126,64 @@
           dinner:"海霸王 長安店  Hai Pa Wang Taiwanese Cuisine",
           pride:"10/25（六）台北舉行",
           prideNote:"＊免事前報名。集合地點另行通知。活動期間旅宿易滿，建議提前預訂。"
-        }
+        },
+        buttons:{ map:"會場地圖（Google 地圖）" }
+      },
+      jp: {
+        subtitle: "本大会のご案内です。",
+        labels: { date:"日程", venue:"会場", address:"住所", access:"アクセス", format:"大会形式", min:"最小参加人数", fee:"参加費", apply:"申込期間", award:"表彰", dinner:"懇親会", pride:"台湾LGBTプライド" },
+        content: {
+          date:"2025年10月26日(日) 9:30",
+          venue:"台北市大安運動中心",
+          address:"106 台湾台北市大安区辛亥路三段55号",
+          access:"文湖線「科技大樓」駅より徒歩約10分",
+          format:[
+            "5部制ダブルス（21点、デュース無し）",
+            "予選リーグ：各ペア3～4試合",
+            "決勝：上位8ペアによるトーナメント",
+            "コート数：12",
+            "相互審判（線審は検討中）",
+            "できる限り高いレベルでの申請を推奨"
+          ],
+          min:"120名（60ペア）",
+          minNote:"＊各レベルの人数が不足する場合、レベルを合併して開催する可能性があります。",
+          fee:"大会 4,000円／宴会 2,000円",
+          feeNote:"＊支払い方法は5/31以降に案内します。詐欺サイトにご注意ください。",
+          apply:"3/24～5/31",
+          award:"1～4位 表彰状＋賞品",
+          dinner:"海霸王 長安店  Hai Pa Wang Taiwanese Cuisine",
+          pride:"10/25(土) 台北にて開催",
+          prideNote:"＊事前登録不要。集合場所は別途ご連絡します。宿泊は早めの予約を推奨。"
+        },
+        buttons:{ map:"会場アクセス（Googleマップ）" }
+      },
+      kr: {
+        subtitle: "대회 안내입니다.",
+        labels: { date:"일시", venue:"장소", address:"주소", access:"오시는 길", format:"대회 형식", min:"최소 인원", fee:"참가비", apply:"접수 기간", award:"시상", dinner:"만찬", pride:"타이완 프라이드" },
+        content: {
+          date:"2025/10/26(일) 09:30",
+          venue:"타이베이 다안 스포츠센터",
+          address:"106 타이베이시 다안구 신하이로 3단 55호",
+          access:"원후선 ‘커지다루오(科技大樓)’ 역 도보 약 10분",
+          format:[
+            "5부제 복식 (21점, 듀스 없음)",
+            "조별 리그: 팀당 3~4경기",
+            "결승: 상위 8팀 토너먼트",
+            "코트 수: 12",
+            "상호 심판 (라인심판 검토 중)",
+            "가능한 높은 레벨로 신청 권장"
+          ],
+          min:"120명 (60팀)",
+          minNote:"＊레벨별 인원이 부족한 경우 통합 운영될 수 있습니다.",
+          fee:"대회 4,000엔 / 만찬 2,000엔",
+          feeNote:"＊5/31 이후 결제 방법 공지 예정. 피싱 사이트 주의.",
+          apply:"3/24–5/31",
+          award:"1~4위 상장 + 상품",
+          dinner:"海霸王 長安店  Hai Pa Wang Taiwanese Cuisine",
+          pride:"10/25(토) 타이베이 개최",
+          prideNote:"＊사전 등록 불필요. 집합 장소 추후 공지. 숙박은 조기 예약 권장."
+        },
+        buttons:{ map:"장소 보기 (Google 지도)" }
       }
     };
 
@@ -143,9 +207,15 @@
         for(const p of parts) cur = cur?.[p];
         if(typeof cur === 'string') el.textContent = cur;
       });
+      // lists
       setList('ul:nth-of-type(1)', dict.content.format);
+      // Back label per language
       document.getElementById('backHome').textContent = lang==='jp' ? '← ホーム' : (lang==='kr' ? '← 홈' : '← 首頁');
+      // Button label for map
+      document.getElementById('btn-map').textContent = dict.buttons.map;
+      // Accessibility lang
       document.documentElement.lang = lang==='jp'?'ja':(lang==='kr'?'ko':'zh-Hant');
+      // Langbar states
       ['cn','jp','kr'].forEach(code=>{
         const selected = (code===lang);
         const btn = document.getElementById(`btn-${code}`);
@@ -155,10 +225,12 @@
       try{ localStorage.setItem('tgb_lang', lang);}catch(e){}
     }
 
+    // Bind
     document.getElementById('btn-cn').addEventListener('click',()=>setLang('cn'));
     document.getElementById('btn-jp').addEventListener('click',()=>setLang('jp'));
     document.getElementById('btn-kr').addEventListener('click',()=>setLang('kr'));
 
+    // Init
     const saved = (()=>{ try { return localStorage.getItem('tgb_lang'); } catch(_) { return null; } })();
     setLang(saved||'cn');
   </script>
