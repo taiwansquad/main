@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TGB 大會資訊 | TGB Badminton Tournament</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root { --bg:#ffffff; --fg:#0f172a; --muted:#475569; --border:#e2e8f0; --card:#f8fafc; --accent:#2563eb; --accent-pressed:#1d4ed8; --radius:16px; --shadow:0 6px 20px rgba(2,6,23,.06); }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --fg:#e5e7eb; --muted:#a1a1aa; --border:#1f2937; --card:#0f172a; --accent:#60a5fa; --accent-pressed:#93c5fd; --shadow:0 10px 30px rgba(0,0,0,.35);} }
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Noto Sans TC","PingFang TC","Microsoft JhengHei","Nanum Gothic",sans-serif;letter-spacing:.2px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+    .wrap{max-width:760px;margin:0 auto;padding:16px clamp(16px,4vw,28px)}
+    .langbar{position:sticky;top:0;z-index:10;background:var(--bg);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);padding:10px clamp(12px,4vw,20px);display:flex;justify-content:center;gap:10px}
+    .langbar button{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--fg);padding:10px 14px;border-radius:999px;font-weight:600;letter-spacing:.2px;min-width:64px;box-shadow:var(--shadow)}
+    .langbar button[aria-pressed="true"]{background:var(--accent);border-color:transparent;color:#fff}
+    .topbar{display:flex;align-items:center;gap:10px;margin:12px 0}
+    .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+    h1{font-size:clamp(22px,6vw,28px);margin:8px 0 2px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
+    .subtitle{color:var(--muted);font-size:14px;margin-bottom:8px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin:14px 0}
+    .row{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin:8px 0}
+    .ico{font-size:18px;line-height:1.2}
+    .txt{font-size:16px}
+    ul{margin:6px 0 6px 22px}
+    li{margin:6px 0}
+    .note{color:var(--muted);font-size:13px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:10px}
+    @media(min-width:540px){.grid-2{grid-template-columns:1fr 1fr}}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{appearance:none;border:1px solid var(--border);background:var(--card);padding:12px 14px;border-radius:12px;text-decoration:none;color:var(--fg);font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+    footer{margin:24px 0 10px;text-align:center;color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <!-- Language Bar (CN / JP / KR) -->
+  <div class="langbar" role="tablist" aria-label="Language selector">
+    <button id="btn-cn" role="tab" aria-selected="true" aria-pressed="true">CN</button>
+    <button id="btn-jp" role="tab" aria-selected="false" aria-pressed="false">JP</button>
+    <button id="btn-kr" role="tab" aria-selected="false" aria-pressed="false">KR</button>
+  </div>
+
+  <main class="wrap">
+    <div class="topbar">
+      <a class="back" id="backHome" href="index.html">← Home</a>
+    </div>
+
+    <header>
+      <h1>TGB Badminton Tournament</h1>
+      <div class="subtitle" data-i18n="subtitle">歡迎！以下為本次賽事的大會資訊。</div>
+    </header>
+
+    <section class="card">
+      <div class="row"><div class="ico">📅</div><div class="txt"><strong data-i18n="labels.date">日期</strong>：<span data-i18n="content.date">2025/10/26（日）09:30</span></div></div>
+      <div class="row"><div class="ico">📍</div><div class="txt">
+        <strong data-i18n="labels.venue">地點</strong>：<span data-i18n="content.venue">台北市大安運動中心</span><br>
+        <span data-i18n="labels.address">地址</span>：<span data-i18n="content.address">106 台灣台北市大安區辛亥路三段 55 號</span><br>
+        <span data-i18n="labels.access">交通</span>：<span data-i18n="content.access">捷運文湖線「科技大樓站」步行約 10 分鐘</span>
+      </div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">🏸</div><div class="txt"><strong data-i18n="labels.format">比賽形式</strong></div></div>
+      <ul>
+        <li data-i18n="content.format.0">五部制雙打（21 分、無平分）</li>
+        <li data-i18n="content.format.1">分組循環：每對 3～4 場</li>
+        <li data-i18n="content.format.2">決賽：前 8 組淘汰賽</li>
+        <li data-i18n="content.format.3">球場數：12</li>
+        <li data-i18n="content.format.4">互相裁判（線審規劃中）</li>
+        <li data-i18n="content.format.5">報名建議以<strong>較高等級</strong>為主</li>
+      </ul>
+      <div class="grid-2">
+        <div class="row"><div class="ico">👥</div><div class="txt"><strong data-i18n="labels.min">最低人數</strong>：<span data-i18n="content.min">120 人（60 組）</span>
+          <div class="note" data-i18n="content.minNote">＊各級人數不足時，可能合併級別辦理。</div>
+        </div></div>
+        <div class="row"><div class="ico">💴</div><div class="txt"><strong data-i18n="labels.fee">費用</strong>：<span data-i18n="content.fee">比賽 4,000 日圓／宴會 2,000 日圓</span>
+          <div class="note" data-i18n="content.feeNote">＊5/31 後另行通知繳費方式。請慎防詐騙，疑問請洽 Taiwan Squad。</div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">📝</div><div class="txt"><strong data-i18n="labels.apply">報名期間</strong>：<span data-i18n="content.apply">3/24～5/31</span></div></div>
+      <div class="row"><div class="ico">🏆</div><div class="txt"><strong data-i18n="labels.award">表揚</strong>：<span data-i18n="content.award">第 1～4 名 獎狀＋獎品</span></div></div>
+      <div class="row"><div class="ico">🍽️</div><div class="txt"><strong data-i18n="labels.dinner">晚宴</strong>：<span data-i18n="content.dinner">地點未定（將選擇交通便利之場地）</span></div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">🏳️‍🌈</div><div class="txt"><strong data-i18n="labels.pride">台灣同志大遊行</strong>：<span data-i18n="content.pride">10/25（六）台北舉行</span>
+        <div class="note" data-i18n="content.prideNote">＊免事前報名。集合地點另行通知。活動期間旅宿易滿，建議提前預訂。</div>
+      </div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">📮</div><div class="txt"><strong data-i18n="labels.how">報名方式</strong>：Google 表單</div></div>
+      <ul>
+        <li data-i18n="content.how.0">請以<strong>雙人已配對</strong>的狀態送出。</li>
+        <li data-i18n="content.how.1">聯絡窗口：Taiwan Squad／Charlie／Kirin</li>
+        <li>Email：<a href="mailto:taiwansquadtokyo@gmail.com">taiwansquadtokyo@gmail.com</a></li>
+        <li>Instagram：@taiwansquad_tokyo ； X：@TaiwanSquad</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" id="btn-apply" href="#apply" target="_blank" rel="noopener" data-i18n="buttons.apply">前往報名（Google 表單）</a>
+        <a class="btn" id="btn-map" href="https://maps.google.com/?q=106+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E8%BE%9B%E4%BA%A5%E8%B7%AF%E4%B8%89%E6%AE%B5+55%E8%99%9F" target="_blank" rel="noopener" data-i18n="buttons.map">會場地圖（Google 地圖）</a>
+      </div>
+    </section>
+
+    <footer>© 2025 TGB</footer>
+  </main>
+
+  <script>
+    // ===== i18n dictionaries =====
+    const I18N = {
+      cn: {
+        subtitle: "歡迎！以下為本次賽事的大會資訊。",
+        labels: { date:"日期", venue:"地點", address:"地址", access:"交通", format:"比賽形式", min:"最低人數", fee:"費用", apply:"報名期間", award:"表揚", dinner:"晚宴", pride:"台灣同志大遊行", how:"報名方式" },
+        content: {
+          date:"2025/10/26（日）09:30",
+          venue:"台北市大安運動中心",
+          address:"106 台灣台北市大安區辛亥路三段 55 號",
+          access:"捷運文湖線「科技大樓站」步行約 10 分鐘",
+          format:[
+            "五部制雙打（21 分、無平分）",
+            "分組循環：每對 3～4 場",
+            "決賽：前 8 組淘汰賽",
+            "球場數：12",
+            "互相裁判（線審規劃中）",
+            "報名建議以較高等級為主"
+          ],
+          min:"120 人（60 組）",
+          minNote:"＊各級人數不足時，可能合併級別辦理。",
+          fee:"比賽 4,000 日圓／宴會 2,000 日圓",
+          feeNote:"＊5/31 後另行通知繳費方式。請慎防詐騙，疑問請洽 Taiwan Squad。",
+          apply:"3/24～5/31",
+          award:"第 1～4 名 獎狀＋獎品",
+          dinner:"地點未定（將選擇交通便利之場地）",
+          pride:"10/25（六）台北舉行",
+          prideNote:"＊免事前報名。集合地點另行通知。活動期間旅宿易滿，建議提前預訂。",
+          how:[
+            "請以雙人已配對的狀態送出。",
+            "聯絡窗口：Taiwan Squad／Charlie／Kirin"
+          ]
+        },
+        buttons:{ apply:"前往報名（Google 表單）", map:"會場地圖（Google 地圖）" },
+      },
+      jp: {
+        subtitle: "本大会のご案内です。",
+        labels: { date:"日程", venue:"会場", address:"住所", access:"アクセス", format:"大会形式", min:"最小参加人数", fee:"参加費", apply:"申込期間", award:"表彰", dinner:"懇親会", pride:"台湾LGBTプライド", how:"申込方法" },
+        content: {
+          date:"2025年10月26日(日) 9:30",
+          venue:"台北市大安運動中心",
+          address:"106 台湾台北市大安区辛亥路三段55号",
+          access:"文湖線「科技大樓」駅より徒歩約10分",
+          format:[
+            "5部制ダブルス（21点、デュース無し）",
+            "予選リーグ：各ペア3～4試合",
+            "決勝：上位8ペアによるトーナメント",
+            "コート数：12",
+            "相互審判（線審は検討中）",
+            "できる限り高いレベルでの申請を推奨"
+          ],
+          min:"120名（60ペア）",
+          minNote:"＊各レベルの人数が不足する場合、レベルを合併して開催する可能性があります。",
+          fee:"大会 4,000円／宴会 2,000円",
+          feeNote:"＊支払い方法は5/31以降に案内します。詐欺サイトにご注意ください。",
+          apply:"3/24～5/31",
+          award:"1～4位 表彰状＋賞品",
+          dinner:"会場は未定（アクセス良好な会場を検討中）",
+          pride:"10/25(土) 台北にて開催",
+          prideNote:"＊事前登録不要。集合場所は別途ご連絡します。宿泊は早めの予約を推奨。",
+          how:[
+            "申請はペアが揃った状態でお願いします。",
+            "連絡先：Taiwan Squad／チャーリー／キリン"
+          ]
+        },
+        buttons:{ apply:"エントリー（Googleフォーム）", map:"会場アクセス（Googleマップ）" },
+      },
+      kr: {
+        subtitle: "대회 안내입니다.",
+        labels: { date:"일시", venue:"장소", address:"주소", access:"오시는 길", format:"대회 형식", min:"최소 인원", fee:"참가비", apply:"접수 기간", award:"시상", dinner:"만찬", pride:"타이완 프라이드", how:"신청 방법" },
+        content: {
+          date:"2025/10/26(일) 09:30",
+          venue:"타이베이 다안 스포츠센터",
+          address:"106 타이베이시 다안구 신하이로 3단 55호",
+          access:"원후선 ‘커지다루오(科技大樓)’ 역 도보 약 10분",
+          format:[
+            "5부제 복식 (21점, 듀스 없음)",
+            "조별 리그: 팀당 3~4경기",
+            "결승: 상위 8팀 토너먼트",
+            "코트 수: 12",
+            "상호 심판 (라인심판 검토 중)",
+            "가능한 높은 레벨로 신청 권장"
+          ],
+          min:"120명 (60팀)",
+          minNote:"＊레벨별 인원이 부족한 경우 통합 운영될 수 있습니다.",
+          fee:"대회 4,000엔 / 만찬 2,000엔",
+          feeNote:"＊5/31 이후 결제 방법 공지 예정. 피싱 사이트 주의.",
+          apply:"3/24–5/31",
+          award:"1~4위 상장 + 상품",
+          dinner:"장소 미정 (교통 편리한 장소 검토 중)",
+          pride:"10/25(토) 타이베이 개최",
+          prideNote:"＊사전 등록 불필요. 집합 장소 추후 공지. 숙박은 조기 예약 권장.",
+          how:[
+            "반드시 팀을 구성한 뒤 신청해 주세요.",
+            "문의: Taiwan Squad / Charlie / Kirin"
+          ]
+        },
+        buttons:{ apply:"신청하기 (Google 폼)", map:"장소 보기 (Google 지도)" },
+      }
+    };
+
+    // Replace list items for format/how per language
+    function setList(selector, items){
+      const ul = document.querySelector(selector);
+      if(!ul) return;
+      ul.innerHTML = "";
+      items.forEach(t=>{
+        const li=document.createElement('li');
+        li.textContent=t;
+        ul.appendChild(li);
+      });
+    }
+
+    function setLang(lang){
+      const dict = I18N[lang] || I18N.cn;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const parts = key.split('.');
+        let cur = dict;
+        for(const p of parts) cur = cur?.[p];
+        if(typeof cur === 'string') el.textContent = cur;
+      });
+      // lists
+      setList('ul:nth-of-type(1)', dict.content.format);
+      setList('section.card:nth-of-type(5) ul', dict.content.how);
+      // Back label
+      document.getElementById('backHome').textContent = lang==='jp' ? '← ホーム' : (lang==='kr' ? '← 홈' : '← 首頁');
+      // Accessibility lang
+      document.documentElement.lang = lang==='jp'?'ja':(lang==='kr'?'ko':'zh-Hant');
+      // Button states
+      ['cn','jp','kr'].forEach(code=>{
+        const selected = (code===lang);
+        const btn = document.getElementById(`btn-${code}`);
+        btn.setAttribute('aria-selected', selected);
+        btn.setAttribute('aria-pressed', selected);
+      });
+      try{ localStorage.setItem('tgb_lang', lang);}catch(e){}
+    }
+
+    // Bind
+    document.getElementById('btn-cn').addEventListener('click',()=>setLang('cn'));
+    document.getElementById('btn-jp').addEventListener('click',()=>setLang('jp'));
+    document.getElementById('btn-kr').addEventListener('click',()=>setLang('kr'));
+
+    // Init
+    const saved = (()=>{ try { return localStorage.getItem('tgb_lang'); } catch(_) { return null; } })();
+    setLang(saved||'cn');
+  </script>
+</body>
+</html>
