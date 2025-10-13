@@ -44,18 +44,8 @@
       margin: 0 auto;
       padding: 20px clamp(16px, 4vw, 28px);
     }
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .logo {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-    }
+
+    /* Sticky language bar */
     .langbar {
       position: sticky;
       top: 0;
@@ -79,20 +69,37 @@
       letter-spacing: 0.2px;
       min-width: 64px;
       box-shadow: var(--shadow);
+      cursor: pointer;
     }
     .langbar button[aria-pressed="true"] {
       background: var(--primary);
       color: white;
       border-color: transparent;
     }
-    h1 {
+
+    /* Title row: logo + text 一行顯示 */
+    h1#title {
+      margin: 20px 0 10px;
+      text-align: center;
       font-size: clamp(22px, 6vw, 32px);
       line-height: 1.2;
-      margin: 8px 0 4px;
       font-weight: 800;
       letter-spacing: -0.02em;
-      text-align: center;
+      white-space: nowrap;           /* 關鍵：避免自動換行 */
+      overflow: hidden;              /* 防止過長時撐破 */
+      text-overflow: ellipsis;       /* 太長時以…表示 */
     }
+    h1#title img {
+      height: clamp(56px, 10vw, 80px);
+      vertical-align: middle;        /* 與文字對齊 */
+      margin-right: 10px;
+    }
+    h1#title span {
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    /* Cards grid */
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -121,7 +128,9 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      line-height: 1.25;
     }
+
     footer {
       margin-top: 40px;
       text-align: center;
@@ -145,6 +154,37 @@
       color: var(--muted);
       margin-top: 4px;
     }
+
+    /* === 手機緊湊版樣式 === */
+    @media (max-width: 480px) {
+      .wrap { padding: 16px 12px; }
+
+      .langbar { padding: 6px 10px; gap: 6px; }
+      .langbar button {
+        padding: 8px 10px;
+        min-width: auto;
+        font-size: 13px;
+        box-shadow: none;
+      }
+
+      h1#title { margin: 14px 0 8px; font-size: 20px; }
+      h1#title img { height: 64px; margin-right: 8px; }
+
+      .grid { gap: 10px; margin-top: 14px; }
+
+      a.card {
+        padding: 12px 12px;
+        min-height: 64px;        /* 需要更小可改成 auto */
+        border-radius: 12px;
+        box-shadow: none;
+      }
+      .card .label { font-size: 15px; gap: 8px; }
+
+      footer { margin-top: 24px; }
+      .social-icons { gap: 14px; }
+      .social-icons img { width: 44px; height: 44px; }
+      .social-label { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -156,12 +196,11 @@
   </div>
 
   <main class="wrap">
-   <header>
-  <img class="logo" src="https://github.com/taiwansquad/main/raw/main/logo-t.png" alt="TGB logo" style="display:inline-block; vertical-align:middle;"/>
-  <h1 id="title" style="display:inline-block; margin-left:8px; vertical-align:middle;">TGB Tournament</h1>
-</header>
-
-
+    <!-- Title: Logo + Text 同行 -->
+    <h1 id="title">
+      <img src="https://github.com/yihuahsiao/taiwan-squad-assets/raw/main/logo.png" alt="TGB logo">
+      <span data-i18n="title.main">TGB Tournament</span>
+    </h1>
 
     <section class="grid" aria-labelledby="title">
       <a class="card" id="link-info" href="info.html">
@@ -183,7 +222,6 @@
 
     <footer>
       <div class="social-icons">
-        <!-- Taiwan Squad IG -->
         <div style="text-align:center;">
           <a href="https://www.instagram.com/taiwansquad_tokyo/" target="_blank" rel="noopener noreferrer">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
@@ -191,7 +229,6 @@
           <div class="social-label">Taiwan Squad</div>
         </div>
 
-        <!-- 大船 IG -->
         <div style="text-align:center;">
           <a href="https://www.instagram.com/dachuan.tw/" target="_blank" rel="noopener noreferrer">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
@@ -209,12 +246,15 @@
   <script>
     const I18N = {
       cn: {
+        title: { main: "TGB Tournament" },
         links: { info: "大會資訊", schedule: "分組賽程", dinner: "晚宴", pride: "TAIWAN LGBT+ PRIDE 2025", trip: "台北旅遊資訊" },
       },
       jp: {
+        title: { main: "TGB Tournament" },
         links: { info: "大会情報", schedule: "グループステージ日程", dinner: "懇親会", pride: "TAIWAN LGBT+ PRIDE 2025", trip: "台北観光情報" },
       },
       kr: {
+        title: { main: "TGB Tournament" },
         links: { info: "대회 정보", schedule: "조별리그 일정", dinner: "만찬", pride: "TAIWAN LGBT+ PRIDE 2025", trip: "타이베이 여행 정보" },
       },
     };
@@ -234,7 +274,7 @@
         btn.setAttribute('aria-selected', selected);
         btn.setAttribute('aria-pressed', selected);
       });
-      try { localStorage.setItem('tgb_lang', lang); } catch(_){ }
+      try { localStorage.setItem('tgb_lang', lang); } catch(_){}
       document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'kr' ? 'ko' : 'zh-Hans');
     }
 
