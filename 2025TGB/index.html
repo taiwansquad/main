@@ -134,10 +134,16 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
     .social-icons img {
       width: 60px;
       height: 60px;
+    }
+    .social-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
     }
   </style>
 </head>
@@ -165,19 +171,33 @@
       <a class="card" id="link-dinner" href="dinner.html">
         <div class="label"><span aria-hidden="true">🍽️</span><span data-i18n="links.dinner">晚宴</span></div>
       </a>
+      <a class="card" id="link-pride" href="pride.html">
+        <div class="label"><span aria-hidden="true">🏳️‍🌈</span><span data-i18n="links.pride">TAIWAN LGBT+ PRIDE 2025</span></div>
+      </a>
+      <a class="card" id="link-trip" href="trip.html">
+        <div class="label"><span aria-hidden="true">🗺️</span><span data-i18n="links.trip">台北旅遊資訊</span></div>
+      </a>
     </section>
 
     <footer>
       <div class="social-icons">
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/taiwansquad_tokyo?igsh=OG1jemRzM2QybjVm" target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-        </a>
-        <!-- X -->
-        <a href="https://x.com/taiwansquad" target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg" alt="X" />
-        </a>
+        <!-- Taiwan Squad IG -->
+        <div style="text-align:center;">
+          <a href="https://www.instagram.com/taiwansquad_tokyo?igsh=OG1jemRzM2QybjVm" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+          </a>
+          <div class="social-label">Taiwan Squad IG</div>
+        </div>
+
+        <!-- 大船 IG -->
+        <div style="text-align:center;">
+          <a href="https://www.instagram.com/dachuan.tw/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+          </a>
+          <div class="social-label">大船 IG</div>
+        </div>
       </div>
+
       <div style="font-size:12px; color:#999;">
         Copyright © 2025. Taiwan Squad Kent H. All rights reserved
       </div>
@@ -187,13 +207,13 @@
   <script>
     const I18N = {
       cn: {
-        links: { info: "大會資訊", schedule: "分組賽程", dinner: "晚宴" },
+        links: { info: "大會資訊", schedule: "分組賽程", dinner: "晚宴", pride: "TAIWAN LGBT+ PRIDE 2025", trip: "台北旅遊資訊" },
       },
       jp: {
-        links: { info: "大会情報", schedule: "グループ日程", dinner: "懇親会" },
+        links: { info: "大会情報", schedule: "グループ日程", dinner: "懇親会", pride: "TAIWAN LGBT+ PRIDE 2025", trip: "台北観光情報" },
       },
       kr: {
-        links: { info: "대회 정보", schedule: "조별 일정", dinner: "만찬" },
+        links: { info: "대회 정보", schedule: "조별 일정", dinner: "만찬", pride: "TAIWAN LGBT+ PRIDE 2025", trip: "타이베이 여행 정보" },
       },
     };
 
@@ -212,7 +232,7 @@
         btn.setAttribute('aria-selected', selected);
         btn.setAttribute('aria-pressed', selected);
       });
-      try { localStorage.setItem('tgb_lang', lang); } catch(_){}
+      try { localStorage.setItem('tgb_lang', lang); } catch(_){ }
       document.documentElement.lang = lang === 'jp' ? 'ja' : (lang === 'kr' ? 'ko' : 'zh-Hans');
     }
 
