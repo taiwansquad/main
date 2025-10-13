@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>台北旅遊：西門町 & LGBTQ+ 夜生活 | Multilingual</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root { --bg:#ffffff; --fg:#0f172a; --muted:#475569; --border:#e2e8f0; --card:#f8fafc; --accent:#2563eb; --accent-pressed:#1d4ed8; --radius:16px; --shadow:0 6px 20px rgba(2,6,23,.06); }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --fg:#e5e7eb; --muted:#a1a1aa; --border:#1f2937; --card:#0f172a; --accent:#60a5fa; --accent-pressed:#93c5fd; --shadow:0 10px 30px rgba(0,0,0,.35);} }
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Noto Sans TC","PingFang TC","Microsoft JhengHei","Nanum Gothic",sans-serif;letter-spacing:.2px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+    .wrap{max-width:880px;margin:0 auto;padding:16px clamp(16px,4vw,28px)}
+    .langbar{position:sticky;top:0;z-index:10;background:var(--bg);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);padding:10px clamp(12px,4vw,20px);display:flex;justify-content:center;gap:10px}
+    .langbar button{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--fg);padding:10px 14px;border-radius:999px;font-weight:600;letter-spacing:.2px;min-width:64px;box-shadow:var(--shadow);cursor:pointer}
+    .langbar button[aria-pressed="true"]{background:var(--accent);border-color:transparent;color:#fff}
+    .topbar{display:flex;align-items:center;gap:10px;margin:12px 0}
+    .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+    h1{font-size:clamp(22px,6vw,32px);margin:8px 0 2px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
+    .subtitle{color:var(--muted);font-size:14px;margin-bottom:8px}
+    .hero{overflow:hidden;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);margin:12px 0}
+    .hero img{width:100%;height:auto;display:block}
+    .hero figcaption{padding:8px 12px;font-size:12px;color:var(--muted);background:var(--card)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin:14px 0}
+    .row{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin:8px 0}
+    .ico{font-size:18px;line-height:1.2}
+    .txt{font-size:16px}
+    .note{color:var(--muted);font-size:13px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:680px){.grid-2{grid-template-columns:1fr 1fr}}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{appearance:none;border:1px solid var(--border);background:var(--card);padding:10px 12px;border-radius:12px;text-decoration:none;color:var(--fg);font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+    h2{margin:4px 0 10px;font-size:clamp(18px,4.2vw,22px)}
+    h3{margin:10px 0 6px;font-size:clamp(16px,3.8vw,18px)}
+    ul{margin:6px 0 6px 22px}
+    li{margin:6px 0}
+    footer{margin:24px 0 10px;text-align:center;color:var(--muted);font-size:12px}
+    .tag{display:inline-block;border:1px solid var(--border);background:var(--bg);padding:.2em .6em;border-radius:999px;font-size:12px;margin-left:6px}
+  </style>
+</head>
+<body>
+  <!-- Language Bar (CN / JP / KR) -->
+  <div class="langbar" role="tablist" aria-label="Language selector">
+    <button id="btn-cn" role="tab" aria-selected="true" aria-pressed="true">CN</button>
+    <button id="btn-jp" role="tab" aria-selected="false" aria-pressed="false">JP</button>
+    <button id="btn-kr" role="tab" aria-selected="false" aria-pressed="false">KR</button>
+  </div>
+
+  <main class="wrap">
+    <div class="topbar">
+      <a class="back" id="backHome" href="index.html">← 首頁</a>
+    </div>
+
+    <header>
+      <h1 data-i18n="title">台北旅遊：西門町 & LGBTQ+ 夜生活</h1>
+      <div class="subtitle" data-i18n="subtitle">西門町（台北的「原宿」）與紅樓周邊的彩虹文化指南。</div>
+    </header>
+
+    <figure class="hero">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%E7%B4%85%E6%A8%93%E5%A4%9C%E8%89%B2.jpg/500px-%E7%B4%85%E6%A8%93%E5%A4%9C%E8%89%B2.jpg" alt="西門紅樓夜景" />
+      <figcaption data-i18n="hero.caption">西門紅樓（1908年建）夜景。插圖來源：Wikimedia Commons。</figcaption>
+    </figure>
+
+    <!-- 西門町與紅樓 -->
+    <section class="card">
+      <h2 data-i18n="sections.xmd.title">西門町（Ximending）區域</h2>
+      <p data-i18n="sections.xmd.body">
+        西門町被稱為「台北的原宿」，集結流行與次文化：購物、美食、街頭藝術、電影院、以及濃厚的 LGBTQ+ 氣息。從 MRT「西門站」1 號或 6 號出口步行即達；距離台北車站也很近，很適合作為觀光的落腳點。
+      </p>
+      <div class="btns">
+        <a class="btn" id="map-ximen" href="https://maps.google.com/?q=Ximen+Station" target="_blank" rel="noopener" data-i18n="buttons.ximen">西門站地圖</a>
+      </div>
+
+      <h3 data-i18n="sections.red.title">西門紅樓（The Red House）<span class="tag" data-i18n="tags.landmark">地標</span></h3>
+      <p data-i18n="sections.red.body">
+        西門紅樓為 1908 年（日本時代）建造的八角形歷史建築，曾用作劇場與市場，現為藝術、設計與文化交流場域。紅樓後方聚集台北最大的 LGBTQ+ 吧區，週末特別熱鬧，國際氛圍濃厚。
+      </p>
+      <ul id="red-bars"></ul>
+      <div class="btns">
+        <a class="btn" id="map-red" href="https://maps.google.com/?q=The+Red+House+Taipei" target="_blank" rel="noopener" data-i18n="buttons.red">紅樓地圖</a>
+      </div>
+    </section>
+
+    <!-- 夜店指南 -->
+    <section class="card">
+      <h2 data-i18n="sections.clubs.title">台北 LGBTQ+ 夜店指南</h2>
+      <div id="clubs"></div>
+      <p class="note" data-i18n="sections.clubs.tip">＊初次造訪推薦「G*Star」或「Fairy」，國際化且友善好上手。</p>
+    </section>
+
+    <footer>© 2025 Taipei Travel Tips (Unofficial)</footer>
+  </main>
+
+  <script>
+    // ===== i18n dictionaries (CN/JP/KR) =====
+    const I18N = {
+      cn: {
+        htmlLang:"zh-Hant", back:"← 首頁",
+        title:"台北旅遊：西門町 & LGBTQ+ 夜生活",
+        subtitle:"西門町（台北的「原宿」）與紅樓周邊的彩虹文化指南。",
+        hero:{ caption:"西門紅樓（1908年建）夜景。插圖來源：Wikimedia Commons。" },
+        buttons:{ ximen:"西門站地圖", red:"紅樓地圖" },
+        tags:{ landmark:"地標", location:"地點", features:"特色", crowd:"客群", vibe:"氛圍" },
+        sections:{
+          xmd:{ title:"西門町（Ximending）區域",
+                body:"西門町被稱為「台北的原宿」，集結流行與次文化：購物、美食、街頭藝術、電影院、以及濃厚的 LGBTQ+ 氣息。從 MRT「西門站」1 號或 6 號出口步行即達；距離台北車站也很近，很適合作為觀光的落腳點。" },
+          red:{ title:"西門紅樓（The Red House）",
+                body:"西門紅樓為 1908 年（日本時代）建造的八角形歷史建築，曾用作劇場與市場，現為藝術、設計與文化交流場域。紅樓後方聚集台北最大的 LGBTQ+ 吧區，週末特別熱鬧，國際氛圍濃厚。",
+                bars:["人氣酒吧：Café Dalida（カフェ・ダリダ）","Secret Garden","Hero Taipei"] },
+          clubs:{
+            title:"台北 LGBTQ+ 夜店指南",
+            tip:"＊初次造訪推薦「G*Star」或「Fairy」，國際化且友善好上手。",
+            list:[
+              {name:"G*Star Club", items:[
+                "地點：中山區",
+                "特色：台北最受歡迎的同志夜店之一，兩層樓、不同音樂區與表演、主題派對",
+                "客群：以同志男性為主，許多外國觀光客",
+                "氛圍：週末最熱鬧，派對感滿滿"
+              ]},
+              {name:"Commander D", items:[
+                "地點：大安區",
+                "特色：皮革、BDSM 等暗黑地下風，主題夜多",
+                "客群：成熟族群、癖好愛好者",
+                "氛圍：深沉、刺激"
+              ]},
+              {name:"FUNKY", items:[
+                "地點：捷運忠孝敦化站附近",
+                "特色：台北老字號同志吧，歷史悠久",
+                "客群：年齡層廣、友善好聊天",
+                "氛圍：放鬆小酌、談天理想"
+              ]},
+              {name:"CÉ LA VI Taipei（友善）", items:[
+                "地點：台北101附近",
+                "特色：高樓 Rooftop 吧＋夜店；特定主題夜舉辦 LGBTQ+ 活動",
+                "客群：時尚派、國際感",
+                "氛圍：高級質感、打卡名所"
+              ]},
+              {name:"Fairy Taipei", items:[
+                "地點：捷運西門站附近",
+                "特色：以變裝皇后秀聞名，開放自由",
+                "客群：整體 LGBTQ+ 與外國旅客眾多",
+                "氛圍：超歡樂的派對現場，表演很受歡迎"
+              ]}
+            ]
+          }
+        }
+      },
+
+      jp: {
+        htmlLang:"ja", back:"← ホーム",
+        title:"台北観光：西門町 & LGBTQ+ ナイトライフ",
+        subtitle:"「台北の原宿」西門町と紅楼エリアのレインボーカルチャー案内。",
+        hero:{ caption:"西門紅楼の夜景。画像出典：Wikimedia Commons。" },
+        buttons:{ ximen:"西門駅マップ", red:"紅楼マップ" },
+        tags:{ landmark:"ランドマーク", location:"場所", features:"特徴", crowd:"客層", vibe:"雰囲気" },
+        sections:{
+          xmd:{ title:"西門町（シーメンディン）エリア",
+                body:"西門町は「台北の原宿」と呼ばれる流行とカルチャーが集まる人気スポット。ショッピング、グルメ、ストリートアート、映画館、そして LGBTQ+ カルチャーが楽しめます。MRT「西門駅」1番または6番出口からすぐ。台北駅からもアクセス抜群で観光の拠点に最適。"},
+          red:{ title:"西門紅楼（シーメンホンロウ）",
+                body:"1908年に建てられた八角形の歴史建築。劇場や市場として使われ、現在はアート・デザイン・文化交流の場として再生。紅楼裏は台北最大の LGBTQ+ バーエリアで、週末は国際色豊かな雰囲気に包まれます。",
+                bars:["人気バー：Café Dalida（カフェ・ダリダ）","Secret Garden","Hero Taipei"] },
+          clubs:{
+            title:"台北おすすめ LGBTQ+ ナイトクラブガイド",
+            tip:"＊初めての方は「G*Star」または「Fairy」がおすすめ。誰でもウェルカムな雰囲気です。",
+            list:[
+              {name:"G*Star Club", items:[
+                "場所：中山区",
+                "特徴：台北で最も人気のゲイナイトクラブの一つ。2フロアに分かれ、音楽エリアやショー、テーマイベントも。",
+                "客層：主にゲイ男性。外国人観光客も多い。",
+                "雰囲気：週末は特に盛り上がり、パーティー感満載。"
+              ]},
+              {name:"Commander D", items:[
+                "場所：大安区",
+                "特徴：レザー・BDSMなどダークでアンダーグラウンドな雰囲気。テーマイベント多数。",
+                "客層：成熟した大人、フェティッシュ好きが多い。",
+                "雰囲気：ディープで刺激的。"
+              ]},
+              {name:"FUNKY", items:[
+                "場所：MRT 忠孝敦化駅付近",
+                "特徴：台北の老舗ゲイバー。長年愛される存在。",
+                "客層：幅広い年齢層でフレンドリー。",
+                "雰囲気：リラックスして会話やお酒を楽しめる。"
+              ]},
+              {name:"CÉ LA VI Taipei（LGBTQ+フレンドリー）", items:[
+                "場所：台北101近く",
+                "特徴：高層ビルのルーフトップバー＋クラブ。特定のテーマナイトで LGBTQ+ イベントあり。",
+                "客層：おしゃれ好き、国際的な雰囲気。",
+                "雰囲気：高級感があり“映え”スポットとしても人気。"
+              ]},
+              {name:"Fairy Taipei", items:[
+                "場所：MRT 西門駅近く",
+                "特徴：ドラァグショーで有名なバー。オープンで自由。",
+                "客層：LGBTQ+ 全体、国際観光客も多数。",
+                "雰囲気：とても陽気で楽しいパーティー空間。ショーは大盛況！"
+              ]}
+            ]
+          }
+        }
+      },
+
+      kr: {
+        htmlLang:"ko", back:"← 홈",
+        title:"타이베이 여행: 시먼딩 & LGBTQ+ 나이트라이프",
+        subtitle:"‘타이베이의 하라주쿠’ 시먼딩과 홍루 주변의 레인보우 문화 가이드.",
+        hero:{ caption:"시먼 홍루 야경. 이미지 출처: 위키미디어 커먼즈." },
+        buttons:{ ximen:"시먼 역 지도", red:"홍루 지도" },
+        tags:{ landmark:"랜드마크", location:"위치", features:"특징", crowd:"객층", vibe:"분위기" },
+        sections:{
+          xmd:{ title:"시먼딩(Ximending) 지역",
+                body:"시먼딩은 ‘타이베이의 하라주쿠’로 불리는 트렌드와 서브컬처의 성지입니다. 쇼핑·미식·스트리트 아트·영화관·LGBTQ+ 문화까지 다채롭게 즐길 수 있어요. MRT ‘시먼역’ 1번/6번 출구에서 바로 도보, 타이베이역에서도 접근이 좋아 여행 거점으로 딱!" },
+          red:{ title:"시먼 홍루(The Red House)",
+                body:"1908년에 지어진 팔각형 역사 건축물로, 과거에는 극장·시장으로 쓰였고 지금은 예술·디자인·문화 교류의 공간으로 재생됐습니다. 홍루 뒤편에는 타이베이 최대의 LGBTQ+ 바 거리로 주말에 특히 활기찹니다.",
+                bars:["인기 바: Café Dalida","Secret Garden","Hero Taipei"] },
+          clubs:{
+            title:"타이베이 LGBTQ+ 클럽 가이드",
+            tip:"＊처음이라면 ‘G*Star’ 또는 ‘Fairy’를 추천! 국제적이고 누구나 환영하는 분위기예요.",
+            list:[
+              {name:"G*Star Club", items:[
+                "위치: 중산구",
+                "특징: 타이베이에서 가장 인기 있는 게이 클럽 중 하나. 2개 층, 다양한 음악존·쇼·테마 파티.",
+                "객층: 주로 게이 남성, 외국인 여행객도 많음.",
+                "분위기: 주말에는 파티감 가득!"
+              ]},
+              {name:"Commander D", items:[
+                "위치: 다안구",
+                "특징: 레더·BDSM 등 다크하고 언더그라운드한 무드. 테마 이벤트 다수.",
+                "객층: 성숙한 연령대, 페티시 취향 많음.",
+                "분위기: 딥하고 자극적."
+              ]},
+              {name:"FUNKY", items:[
+                "위치: MRT 충효둔화역 근처",
+                "특징: 타이베이의 오래된 게이 바. 오랜 사랑을 받는 명소.",
+                "객층: 연령대 폭넓고 프렌들리.",
+                "분위기: 편안하게 대화·한잔하기 좋아요."
+              ]},
+              {name:"CÉ LA VI Taipei(프렌들리)", items:[
+                "위치: 타이베이 101 근처",
+                "특징: 루프톱 바 + 클럽. 일부 테마 나이트는 LGBTQ+ 이벤트.",
+                "객층: 패셔너블, 국제적인 분위기.",
+                "분위기: 고급스럽고 ‘인스타 감성’ 가득."
+              ]},
+              {name:"Fairy Taipei", items:[
+                "위치: MRT 시먼역 근처",
+                "특징: 드랙쇼로 유명한 바. 오픈하고 자유로움.",
+                "객층: 전반적인 LGBTQ+, 외국인 다수.",
+                "분위기: 매우 흥겹고 신나는 파티, 쇼도 인기!"
+              ]}
+            ]
+          }
+        }
+      }
+    };
+
+    // ----- DOM helpers -----
+    function setBars(list){
+      const ul = document.getElementById('red-bars');
+      ul.innerHTML = '';
+      list.forEach(t=>{
+        const li = document.createElement('li');
+        li.textContent = t;
+        ul.appendChild(li);
+      });
+    }
+
+    function renderClubs(clubs){
+      const host = document.getElementById('clubs');
+      host.innerHTML = '';
+      clubs.forEach(c=>{
+        const box = document.createElement('div');
+        box.className = 'card';
+        const h3 = document.createElement('h3');
+        h3.textContent = c.name;
+        box.appendChild(h3);
+        const ul = document.createElement('ul');
+        c.items.forEach(it=>{
+          const li = document.createElement('li'); li.textContent = it; ul.appendChild(li);
+        });
+        box.appendChild(ul);
+        host.appendChild(box);
+      });
+    }
+
+    function setLang(lang){
+      const dict = I18N[lang] || I18N.cn;
+
+      // Basic text nodes
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const path = el.getAttribute('data-i18n').split('.');
+        let cur = dict;
+        for(const p of path) cur = cur?.[p];
+        if(typeof cur === 'string') el.textContent = cur;
+      });
+
+      // Bars + Clubs dynamic lists
+      setBars(dict.sections.red.bars);
+      renderClubs(dict.sections.clubs.list);
+
+      // html lang & back label
+      document.documentElement.lang = dict.htmlLang;
+      document.getElementById('backHome').textContent = dict.back;
+
+      // Buttons text
+      document.getElementById('map-ximen').textContent = dict.buttons.ximen;
+      document.getElementById('map-red').textContent = dict.buttons.red;
+
+      // Langbar ARIA
+      ['cn','jp','kr'].forEach(code=>{
+        const selected = (code===lang);
+        const btn = document.getElementById(`btn-${code}`);
+        btn.setAttribute('aria-selected', selected);
+        btn.setAttribute('aria-pressed', selected);
+      });
+
+      // persist
+      try{ localStorage.setItem('taipei_lang', lang);}catch(e){}
+    }
+
+    // Bind
+    document.getElementById('btn-cn').addEventListener('click',()=>setLang('cn'));
+    document.getElementById('btn-jp').addEventListener('click',()=>setLang('jp'));
+    document.getElementById('btn-kr').addEventListener('click',()=>setLang('kr'));
+
+    // Init
+    const saved = (()=>{ try { return localStorage.getItem('taipei_lang'); } catch(_) { return null; } })();
+    setLang(saved||'cn');
+  </script>
+</body>
+</html>
