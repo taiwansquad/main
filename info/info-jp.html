@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TGB 大会情報 | TGB Badminton Tournament</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root{
+      --bg:#ffffff;--fg:#0f172a;--muted:#475569;--border:#e2e8f0;--card:#f8fafc;--accent:#2563eb;--radius:16px;--shadow:0 6px 20px rgba(2,6,23,.06)
+    }
+    @media(prefers-color-scheme:dark){:root{--bg:#0b1220;--fg:#e5e7eb;--muted:#9ca3af;--border:#1f2937;--card:#0f172a;--accent:#60a5fa;--shadow:0 10px 30px rgba(0,0,0,.35)}}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Microsoft YaHei",sans-serif;letter-spacing:.2px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+    .wrap{max-width:760px;margin:0 auto;padding:16px clamp(16px,4vw,28px)}
+    .topbar{position:sticky;top:0;z-index:10;background:var(--bg);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;padding:12px clamp(12px,4vw,20px)}
+    .topbar a.back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+    h1{font-size:clamp(22px,6vw,28px);margin:8px 0 2px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
+    .subtitle{color:var(--muted);font-size:14px;margin-bottom:8px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 16px;margin:14px 0}
+    .kv{display:grid;grid-template-columns:1fr;gap:10px}
+    .row{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin:10px 0}
+    .row .ico{font-size:18px;line-height:1.2}
+    .row .txt{font-size:16px}
+    ul{margin:6px 0 6px 22px}
+    li{margin:6px 0}
+    .note{color:var(--muted);font-size:13px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:10px}
+    @media(min-width:540px){.grid-2{grid-template-columns:1fr 1fr}}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{appearance:none;border:1px solid var(--border);background:var(--card);padding:12px 14px;border-radius:12px;text-decoration:none;color:var(--fg);font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+    footer{margin:24px 0 10px;text-align:center;color:var(--muted);font-size:12px}
+    /* QR placeholders */
+    .qr{display:flex;gap:12px;align-items:center}
+    .qr .box{width:112px;height:112px;border:1px dashed var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+    .tag{display:inline-block;background:rgba(37,99,235,.1);color:var(--accent);border:1px solid rgba(37,99,235,.22);padding:4px 8px;border-radius:999px;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="./index.html" aria-label="Back to home">← Home</a>
+    <strong>TGB 大会情報</strong>
+  </div>
+
+  <main class="wrap">
+    <header>
+      <h1>TGB Badminton Tournament</h1>
+      <div class="subtitle">台湾大会のご案内（スマホ最適化）</div>
+    </header>
+
+    <section class="card">
+      <div class="row"><div class="ico">📅</div><div class="txt"><strong>日程</strong>：2025年10月26日(日) 9:30</div></div>
+      <div class="row"><div class="ico">📍</div><div class="txt"><strong>会場</strong>：台北市大安運動中心<br/>住所：106 台灣台北市大安區辛亥路三段55號<br/>アクセス：木柵線（ブラウンライン）「科技大樓」駅より徒歩約10分</div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">🏸</div><div class="txt"><strong>大会形式</strong><ul>
+        <li>5部制ダブルス（21点マッチ、デュース無し）</li>
+        <li>予選リーグ：各ペア3～4試合</li>
+        <li>決勝：上位8ペアによるトーナメント</li>
+        <li>コート数：12</li>
+        <li>相互審判（線審の設置は検討中）</li>
+        <li>エントリーはできる限り<strong>高いレベル</strong>での申請を推奨</li>
+      </ul></div></div>
+      <div class="grid-2">
+        <div class="row"><div class="ico">👥</div><div class="txt"><strong>最小参加人数</strong>：120名（60ペア）<div class="note">※各レベルの最小人数を満たさない場合、レベルを合併して開催する可能性があります。</div></div></div>
+        <div class="row"><div class="ico">💴</div><div class="txt"><strong>参加費</strong>：大会 4,000円／宴会 2,000円<div class="note">※支払い方法は5/31以降に別途ご案内します。詐欺サイトにご注意ください。不明点は Taiwan Squad まで。</div></div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">📝</div><div class="txt"><strong>申込期間</strong>：3/24～5/31<div class="note">※最小人数を達しない場合は6/30まで延長募集。5月末時点で120名未達の場合、開催取消の可能性あり。</div></div></div>
+      <div class="row"><div class="ico">🏆</div><div class="txt"><strong>表彰</strong>：1～4位 表彰状＋賞品</div></div>
+      <div class="row"><div class="ico">🍽️</div><div class="txt"><strong>宴会</strong>：場所は未定（アクセス良好な会場を検討中）</div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">🏳️‍🌈</div><div class="txt"><strong>台湾LGBTプライド</strong>：10/25(土) 台北で開催予定。<div class="note">※事前登録不要。集合場所は別途ご連絡します。開催時期は宿泊が混み合うため、早めの予約を推奨。</div></div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">📮</div><div class="txt"><strong>申込方法</strong>：Googleフォーム</div></div>
+      <ul>
+        <li>申請は<strong>ペアが揃った状態</strong>でお願いします。</li>
+        <li>連絡先：Taiwan Squad／チャーリー(Charlie)／キリン(Kirin)</li>
+        <li>メール：<a href="mailto:taiwansquadtokyo@gmail.com">taiwansquadtokyo@gmail.com</a></li>
+        <li>Instagram：@taiwansquad_tokyo ／ X：@TaiwanSquad</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" href="#apply" aria-label="Apply form">エントリー（Googleフォーム）</a>
+        <a class="btn" href="https://maps.google.com/?q=106+%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E8%BE%9B%E4%BA%A5%E8%B7%AF%E4%B8%89%E6%AE%B5+55%E8%99%9F" target="_blank" rel="noopener">会場アクセス（Googleマップ）</a>
+      </div>
+    </section>
+
+    <footer>© 2025 TGB</footer>
+  </main>
+</body>
+</html>
