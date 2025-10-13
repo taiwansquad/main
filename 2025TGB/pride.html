@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>台灣同志遊行 Taiwan LGBT+ Pride | Multilingual</title>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root { --bg:#ffffff; --fg:#0f172a; --muted:#475569; --border:#e2e8f0; --card:#f8fafc; --accent:#2563eb; --accent-pressed:#1d4ed8; --radius:16px; --shadow:0 6px 20px rgba(2,6,23,.06); }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --fg:#e5e7eb; --muted:#a1a1aa; --border:#1f2937; --card:#0f172a; --accent:#60a5fa; --accent-pressed:#93c5fd; --shadow:0 10px 30px rgba(0,0,0,.35);} }
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans JP","Noto Sans TC","PingFang TC","Microsoft JhengHei","Nanum Gothic",sans-serif;letter-spacing:.2px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+    .wrap{max-width:760px;margin:0 auto;padding:16px clamp(16px,4vw,28px)}
+    .langbar{position:sticky;top:0;z-index:10;background:var(--bg);backdrop-filter:saturate(150%) blur(6px);border-bottom:1px solid var(--border);padding:10px clamp(12px,4vw,20px);display:flex;justify-content:center;gap:10px}
+    .langbar button{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--fg);padding:10px 14px;border-radius:999px;font-weight:600;letter-spacing:.2px;min-width:64px;box-shadow:var(--shadow);cursor:pointer}
+    .langbar button[aria-pressed="true"]{background:var(--accent);border-color:transparent;color:#fff}
+    .topbar{display:flex;align-items:center;gap:10px;margin:12px 0}
+    .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--fg);padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
+    h1{font-size:clamp(22px,6vw,30px);margin:8px 0 2px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
+    .subtitle{color:var(--muted);font-size:14px;margin-bottom:8px}
+    .hero{overflow:hidden;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);margin:12px 0}
+    .hero img{width:100%;height:auto;display:block}
+    .hero figcaption{padding:8px 12px;font-size:12px;color:var(--muted);background:var(--card)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin:14px 0}
+    .row{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;margin:8px 0}
+    .ico{font-size:18px;line-height:1.2}
+    .txt{font-size:16px}
+    ul{margin:6px 0 6px 22px}
+    li{margin:6px 0}
+    .note{color:var(--muted);font-size:13px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:10px}
+    @media(min-width:540px){.grid-2{grid-template-columns:1fr 1fr}}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{appearance:none;border:1px solid var(--border);background:var(--card);padding:12px 14px;border-radius:12px;text-decoration:none;color:var(--fg);font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+    footer{margin:24px 0 10px;text-align:center;color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <!-- Language Bar (CN / JP / KR) -->
+  <div class="langbar" role="tablist" aria-label="Language selector">
+    <button id="btn-cn" role="tab" aria-selected="true" aria-pressed="true">CN</button>
+    <button id="btn-jp" role="tab" aria-selected="false" aria-pressed="false">JP</button>
+    <button id="btn-kr" role="tab" aria-selected="false" aria-pressed="false">KR</button>
+  </div>
+
+  <main class="wrap">
+    <div class="topbar">
+      <a class="back" id="backHome" href="index.html">← 首頁</a>
+    </div>
+
+    <header>
+      <h1 data-i18n="title">台灣同志遊行 Taiwan LGBT+ Pride</h1>
+      <div class="subtitle" data-i18n="subtitle">台灣自 2003 年起每年於台北舉行的同志遊行，是東亞規模最大的驕傲活動。</div>
+    </header>
+
+    <figure class="hero">
+      <img src="https://images.squarespace-cdn.com/content/v1/5d0e1103633ebd0001fed7e1/1754302000452-5KT14R4JI8E55AUTYPMV/2025+Taiwan+Pride+-+Social_1420x687px.jpg?format=2500w" alt="2025 Taiwan LGBT+ Pride 官方視覺" />
+      <figcaption data-i18n="hero.caption">2025 Taiwan LGBT+ Pride 官方視覺。圖片來源：主辦方。</figcaption>
+    </figure>
+
+    <section class="card">
+      <div class="row"><div class="ico">🏳️‍🌈</div><div class="txt">
+        <strong data-i18n="sections.about.title">關於活動</strong>
+        <p data-i18n="sections.about.body">
+          台灣同志遊行（Taiwan LGBT+ Pride）自 2003 年舉辦，2019 年同婚合法化後吸引超過 20 萬人參與。遊行通常於每年 10 月最後一個週六在台北舉行。
+        </p>
+      </div></div>
+      <div class="grid-2">
+        <div class="row"><div class="ico">📅</div><div class="txt">
+          <strong data-i18n="labels.date">日期</strong>：<span data-i18n="content.date">2025/10/25（六）</span>
+        </div></div>
+        <div class="row"><div class="ico">🌐</div><div class="txt">
+          <strong data-i18n="labels.website">官方網站</strong>：
+          <a href="https://www.taiwanpride.lgbt/" target="_blank" rel="noopener" data-i18n="content.website">https://www.taiwanpride.lgbt/</a>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="ico">📍</div><div class="txt">
+        <strong data-i18n="labels.meet">集合地點</strong>：<span data-i18n="content.meet">台北市政府前 市民廣場</span><br>
+        <span data-i18n="labels.access">交通</span>：<span data-i18n="content.access">搭乘捷運板南線至「台北市政府站（BL18）」2 號出口，步行可達。</span>
+        <div class="btns">
+          <a class="btn" id="btn-map" href="https://maps.google.com/?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E6%94%BF%E5%BA%9C%20%E5%B8%82%E6%B0%91%E5%BB%A3%E5%A0%B4" target="_blank" rel="noopener" data-i18n="buttons.map">會場地圖（Google 地圖）</a>
+          <a class="btn primary" href="https://www.taiwanpride.lgbt/" target="_blank" rel="noopener" data-i18n="buttons.official">官方網站</a>
+        </div>
+      </div></div>
+      <div class="note" data-i18n="content.note">＊活動期間旅宿容易滿房，建議提前預訂。</div>
+    </section>
+
+    <footer>© 2025 Taiwan LGBT+ Pride (Unofficial fan page)</footer>
+  </main>
+
+  <script>
+    // ===== i18n dictionaries (CN/JP/KR) =====
+    const I18N = {
+      cn: {
+        title: "台灣同志遊行 Taiwan LGBT+ Pride",
+        subtitle: "台灣自 2003 年起每年於台北舉行的同志遊行，是東亞規模最大的驕傲活動。",
+        hero:{ caption:"2025 Taiwan LGBT+ Pride 官方視覺。圖片來源：主辦方。" },
+        sections:{ 
+          about:{ 
+            title:"關於活動", 
+            body:"台灣同志遊行（Taiwan LGBT+ Pride）自 2003 年舉辦，2019 年同婚合法化後吸引超過 20 萬人參與。遊行通常於每年 10 月最後一個週六在台北舉行。"
+          } 
+        },
+        labels:{ date:"日期", website:"官方網站", meet:"集合地點", access:"交通" },
+        content:{
+          date:"2025/10/25（六）",
+          website:"https://www.taiwanpride.lgbt/",
+          meet:"台北市政府前 市民廣場",
+          access:"搭乘捷運板南線至「台北市政府站（BL18）」2 號出口，步行可達。",
+          note:"＊活動期間旅宿容易滿房，建議提前預訂。"
+        },
+        buttons:{ map:"會場地圖（Google 地圖）", official:"官方網站" },
+        back:"← 首頁",
+        htmlLang:"zh-Hant"
+      },
+      jp: {
+        title: "台湾LGBT+プライド Taiwan LGBT+ Pride",
+        subtitle: "台湾では2003年から毎年台北で開催されているプライドパレードで、東アジア最大規模のイベントです。",
+        hero:{ caption:"2025年公式ビジュアル（出典：主催者）。" },
+        sections:{ 
+          about:{ 
+            title:"概要", 
+            body:"台湾LGBT+プライドは2003年に開始。2019年の同性婚合法化以降は20万人以上が参加。毎年10月最終土曜日に台北で開催されます。"
+          } 
+        },
+        labels:{ date:"日程", website:"公式サイト", meet:"集合場所", access:"アクセス" },
+        content:{
+          date:"2025年10月25日（土）",
+          website:"https://www.taiwanpride.lgbt/",
+          meet:"台北市政府前 市民広場",
+          access:"MRT板南線「台北市政府駅（BL18）」2番出口より徒歩",
+          note:"＊期間中は宿泊が混雑します。早めの予約をおすすめします。"
+        },
+        buttons:{ map:"会場（Googleマップ）", official:"公式サイト" },
+        back:"← ホーム",
+        htmlLang:"ja"
+      },
+      kr: {
+        title: "타이완 LGBT+ 프라이드 Taiwan LGBT+ Pride",
+        subtitle: "2003년부터 매년 타이베이에서 열리는 동아시아 최대 규모의 프라이드 퍼레이드입니다.",
+        hero:{ caption:"2025 공식 비주얼. 이미지 출처: 주최 측." },
+        sections:{ 
+          about:{ 
+            title:"행사 소개", 
+            body:"타이완 프라이드는 2003년에 시작되었으며, 2019년 동성결혼 합법화 이후 20만 명 이상이 참여했습니다. 매년 10월 마지막 토요일에 타이베이에서 열립니다."
+          } 
+        },
+        labels:{ date:"일시", website:"공식 웹사이트", meet:"집합 장소", access:"오시는 길" },
+        content:{
+          date:"2025/10/25(토)",
+          website:"https://www.taiwanpride.lgbt/",
+          meet:"타이베이 시청 앞 시민광장",
+          access:"MRT 반난선 ‘타이베이 시청역(BL18)’ 2번 출구 도보",
+          note:"＊행사 기간에는 숙소가 빨리 마감될 수 있으니, 미리 예약하세요."
+        },
+        buttons:{ map:"장소 보기 (Google 지도)", official:"공식 웹사이트" },
+        back:"← 홈",
+        htmlLang:"ko"
+      }
+    };
+
+    function setLang(lang){
+      const dict = I18N[lang] || I18N.cn;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const path = el.getAttribute('data-i18n').split('.');
+        let cur = dict;
+        for(const p of path) cur = cur?.[p];
+        if(typeof cur === 'string') el.textContent = cur;
+      });
+      document.getElementById('backHome').textContent = dict.back;
+      document.documentElement.lang = dict.htmlLang;
+
+      // Langbar states
+      ['cn','jp','kr'].forEach(code=>{
+        const selected = (code===lang);
+        const btn = document.getElementById(`btn-${code}`);
+        btn.setAttribute('aria-selected', selected);
+        btn.setAttribute('aria-pressed', selected);
+      });
+
+      try{ localStorage.setItem('pride_lang', lang);}catch(e){}
+    }
+
+    // Bind
+    document.getElementById('btn-cn').addEventListener('click',()=>setLang('cn'));
+    document.getElementById('btn-jp').addEventListener('click',()=>setLang('jp'));
+    document.getElementById('btn-kr').addEventListener('click',()=>setLang('kr'));
+
+    // Init
+    const saved = (()=>{ try { return localStorage.getItem('pride_lang'); } catch(_) { return null; } })();
+    setLang(saved||'cn');
+  </script>
+</body>
+</html>
